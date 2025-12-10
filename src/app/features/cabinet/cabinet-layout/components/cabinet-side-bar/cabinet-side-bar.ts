@@ -14,6 +14,7 @@ enum IRole {
   USER = 2,
   PSYCHOLOGIST = 3,
   DIRECTOR = 4,
+  MANAGER = 5,
 }
 
 @Component({
@@ -55,28 +56,58 @@ export class CabinetSideBar {
       permissions: [IRole.DIRECTOR],
     },
     {
+      icon: 'pi-user',
+      title: 'Profil',
+      url: '/cabinet/profile/manager',
+      permissions: [IRole.MANAGER],
+    },
+    {
+      icon: 'pi-users',
+      title: "O'quvchilar",
+      url: '/cabinet/user-list',
+      permissions: [IRole.DIRECTOR],
+    },
+    {
+      icon: 'pi-user-edit',
+      title: 'Psixologlar',
+      url: '/cabinet/psychologist-list',
+      permissions: [IRole.DIRECTOR],
+    },
+    {
+      icon: 'pi-chart-bar',
+      title: "So'rovnomalar natijalari",
+      url: '/cabinet/survey-results',
+      permissions: [IRole.DIRECTOR],
+    },
+    {
+      icon: 'pi-check-circle',
+      title: 'Sertifikatni tasdiqlash',
+      url: '/cabinet/certificate-verification',
+      permissions: [IRole.DIRECTOR, IRole.MANAGER],
+    },
+    {
       icon: 'pi-database',
       title: 'Kurslar',
       url: '/cabinet/course-list',
-      permissions: [IRole.STUDENT, IRole.USER, IRole.PSYCHOLOGIST, IRole.DIRECTOR],
+      permissions: [IRole.STUDENT, IRole.USER, IRole.PSYCHOLOGIST],
     },
     {
       icon: 'pi-star',
       title: 'Sertifikatlarim',
       url: '/cabinet/certificate',
-      permissions: [IRole.STUDENT, IRole.USER, IRole.PSYCHOLOGIST, IRole.DIRECTOR],
+      permissions: [IRole.STUDENT, IRole.USER, IRole.PSYCHOLOGIST],
     },
     {
       icon: 'pi-comment',
-      title: 'So‘rovnomalar',
+      title: "So'rovnomalar",
       url: '/cabinet/surveys',
-      permissions: [IRole.STUDENT, IRole.PSYCHOLOGIST, IRole.DIRECTOR],
+      permissions: [IRole.STUDENT, IRole.PSYCHOLOGIST],
     },
     {
       icon: 'pi-comments',
       title: 'Psixologik maslahat',
       url: '/cabinet/psychological-counseling',
-      permissions: [IRole.PSYCHOLOGIST, IRole.DIRECTOR],
+      permissions: [IRole.PSYCHOLOGIST],
     },
   ];
 

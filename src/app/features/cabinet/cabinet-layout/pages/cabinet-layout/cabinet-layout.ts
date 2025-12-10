@@ -17,7 +17,7 @@ export class CabinetLayout {
 
   roleId = signal<number>(0);
 
-  user: { imgLink: string; name: string; role: string } | null = null;
+  user: { imgLink: string; name: string; role: string; workplace?: string } | null = null;
 
   ngOnInit() {
     let roleId = +(localStorage.getItem('roleId') || 0);
@@ -43,7 +43,23 @@ export class CabinetLayout {
         this.user = {
           imgLink: './assets/imgs/profile/psychologist.png',
           name: 'Ishanxanov Ayyubxon',
-          role: 'O‘quvchi',
+          role: "O'quvchi",
+        };
+        break;
+      case 4:
+        this.user = {
+          imgLink: './assets/imgs/profile/psychologist.png',
+          name: 'Ishanxanov Abror',
+          role: 'Direktor',
+          workplace: '222-maktab',
+        };
+        break;
+      case 5:
+        this.user = {
+          imgLink: './assets/imgs/profile/psychologist.png',
+          name: 'Ishanxanov Abror',
+          role: 'Monomarkaz',
+          workplace: '222-maktab',
         };
     }
   }

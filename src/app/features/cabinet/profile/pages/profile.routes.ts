@@ -13,4 +13,12 @@ export default [
     path: 'psychologist',
     loadComponent: () => import('./profile-psychologist/profile-psychologist'),
   },
+  {
+    path: 'director',
+    loadComponent: () => import('./profile-director/profile-director'),
+  },
+  {
+    path: 'manager',
+    loadComponent: () => import('./profile-manager/profile-manager'),
+  },
 ];

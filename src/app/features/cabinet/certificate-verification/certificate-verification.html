@@ -1,0 +1,81 @@
+<div class="w-full flex justify-between items-center mb-6">
+  <div class="search-box">
+    <i class="pi pi-search"></i>
+    <input
+      type="text"
+      placeholder="Qidirish"
+      [(ngModel)]="searchText"
+      (input)="filterCertificates()"
+      class="search-input"
+    />
+  </div>
+  <div class="filter-box">
+    <label class="filter-label">Sinf</label>
+    <p-select
+      [options]="classOptions"
+      [(ngModel)]="selectedClass"
+      (onChange)="filterCertificates()"
+      placeholder="Barchasi"
+      [showClear]="true"
+      class="class-select"
+    ></p-select>
+  </div>
+</div>
+
+<div class="card">
+  <p-table
+    [value]="filteredCertificates"
+    [paginator]="true"
+    [rows]="5"
+    [rowsPerPageOptions]="[5, 10, 20]"
+    styleClass="custom-table"
+    [tableStyle]="{ 'min-width': '60rem' }"
+  >
+    <ng-template pTemplate="header">
+      <tr>
+        <th style="width: 25%">O'quvchi</th>
+        <th style="width: 10%">Sinf</th>
+        <th style="width: 15%">Maktab</th>
+        <th style="width: 20%">O'qigan kasbi</th>
+        <th style="width: 15%">Baholash</th>
+        <th style="width: 15%">Sertifikat berish</th>
+      </tr>
+    </ng-template>
+
+    <ng-template pTemplate="body" let-cert>
+      <tr>
+        <td>
+          <div class="student-profile">
+            @if (cert.image) {
+              <img
+                [src]="cert.image"
+                [alt]="cert.name"
+                class="avatar-img"
+              />
+            } @else {
+              <i class="pi pi-user avatar-icon"></i>
+            }
+            <span class="student-name">{{ cert.name }}</span>
+          </div>
+        </td>
+        <td>{{ cert.class }}</td>
+        <td>{{ cert.school }}</td>
+        <td>{{ cert.profession }}</td>
+        <td>
+          <p-inputnumber
+            [(ngModel)]="cert.rating"
+            [showButtons]="true"
+            [min]="1"
+            [max]="5"
+            [inputStyle]="{ width: '40px' }"
+            [style]="{ width: '75px' }"
+            class="rating-input"
+          />
+        </td>
+        <td>
+          <button class="btn-certificate">Sertifikat berish</button>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>

@@ -18,7 +18,7 @@ export default class SignIn {
   selectedRole = signal<number | null>(null);
 
   stateOptions = signal<any>([
-    { label: 'O‘quvchi', value: 1 },
+    { label: "O'quvchi", value: 1 },
     { label: 'Foydalanuvchi', value: 2 },
     { label: 'Psixolog', value: 3 },
     { label: 'Direktor', value: 4 },
@@ -35,6 +35,15 @@ export default class SignIn {
   goToAdmin() {
     localStorage.setItem('roleId', this.selectedRole() + '');
 
-    this.router.navigateByUrl('/cabinet/profile');
+    const roleRoutes: { [key: number]: string } = {
+      1: '/cabinet/profile/student',
+      2: '/cabinet/profile/user',
+      3: '/cabinet/profile/psychologist',
+      4: '/cabinet/profile/director',
+      5: '/cabinet/profile/manager',
+    };
+
+    const route = roleRoutes[this.selectedRole()!] || '/cabinet/profile/student';
+    this.router.navigateByUrl(route);
   }
 }

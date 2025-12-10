@@ -1,11 +1,30 @@
-<div class="w-full flex justify-between">
-  <input type="text" name="" id="" />
-  <p-select></p-select>
+<div class="w-full flex justify-between items-center mb-6">
+  <div class="search-box">
+    <i class="pi pi-search"></i>
+    <input
+      type="text"
+      placeholder="Qidirish"
+      [(ngModel)]="searchText"
+      (input)="filterUsers()"
+      class="search-input"
+    />
+  </div>
+  <div class="filter-box">
+    <label class="filter-label">Sinf</label>
+    <p-select
+      [options]="classOptions"
+      [(ngModel)]="selectedClass"
+      (onChange)="filterUsers()"
+      placeholder="Barchasi"
+      [showClear]="true"
+      styleClass="class-select"
+    ></p-select>
+  </div>
 </div>
 
 <div class="card">
   <p-table
-    [value]="users"
+    [value]="filteredUsers"
     [paginator]="true"
     [rows]="5"
     [rowsPerPageOptions]="[5, 10, 20]"
@@ -45,7 +64,7 @@
         <td>
           <a href="#" class="action-link">
             <i class="pi pi-eye"></i>
-            <span>Ko‘rish</span>
+            <span>Ko'rish</span>
           </a>
         </td>
         <td>

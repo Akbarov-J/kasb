@@ -126,34 +126,29 @@
   }
 }
 
-.action-link {
+.rating-display {
   display: flex;
   align-items: center;
-  gap: 8px;
-  text-decoration: none;
-  color: #3b82f6;
-  font-weight: 500;
+  gap: 4px;
   font-size: 14px;
+  font-weight: 500;
 
-  i {
-    font-size: 14px;
-  }
-
-  &:hover {
-    text-decoration: underline;
+  .rating-icon {
+    color: #6b7280;
+    font-size: 12px;
   }
 }
 
-.btn-write {
+.btn-certificate {
   background-color: #e0f2fe;
   color: #0ea5e9;
   border: none;
   padding: 8px 20px;
   border-radius: 8px;
-  font-weight: 600;
   font-size: 14px;
+  font-weight: 500;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transition: all 0.2s;
 
   &:hover {
     background-color: #bae6fd;

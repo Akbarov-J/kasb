@@ -1,16 +1,18 @@
 import { Component } from '@angular/core';
+import { InputNumberModule } from 'primeng/inputnumber';
 import { Select } from 'primeng/select';
 import { TableModule } from 'primeng/table';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-user-list',
-  imports: [Select, TableModule, CommonModule, FormsModule],
-  templateUrl: './user-list.html',
-  styleUrl: './user-list.scss',
+  selector: 'app-certificate-verification',
+  imports: [InputNumberModule, Select, TableModule, CommonModule, FormsModule],
+  templateUrl: './certificate-verification.html',
+  styleUrl: './certificate-verification.scss',
+  standalone: true,
 })
-export class UserList {
+export class CertificateVerification {
   searchText: string = '';
   selectedClass: string | null = null;
 
@@ -23,63 +25,69 @@ export class UserList {
     { label: '11 B', value: '11 B' },
   ];
 
-  users = [
+  certificates = [
     {
       name: 'Ivan Temurov',
       class: '10 B',
       school: '222-maktab',
       profession: 'Data analyst',
+      rating: 3,
     },
     {
       name: 'Temur Ivanov',
       class: '10 B',
       school: '222-maktab',
       profession: 'Developer',
+      rating: 3,
     },
     {
       name: 'Alisher Uzoqov',
       class: '10 B',
       school: '222-maktab',
       profession: 'Musician',
+      rating: 3,
     },
     {
       name: 'Jahongir Xolmatov',
       class: '10 B',
       school: '222-maktab',
       profession: 'Web designer',
+      rating: 3,
     },
     {
       name: 'Anastasiya Rasulova',
       class: '10 B',
       school: '222-maktab',
       profession: 'Product manager',
+      rating: 3,
     },
     {
       name: 'Iroda Diorova',
       class: '10 B',
       school: '222-maktab',
       profession: 'President',
+      rating: 3,
     },
   ];
 
-  filteredUsers = [...this.users];
+  filteredCertificates = [...this.certificates];
 
   ngOnInit() {
-    this.filterUsers();
+    this.filterCertificates();
   }
 
-  filterUsers() {
-    this.filteredUsers = this.users.filter(user => {
+  filterCertificates() {
+    this.filteredCertificates = this.certificates.filter(cert => {
       const matchesSearch = !this.searchText ||
-        user.name.toLowerCase().includes(this.searchText.toLowerCase()) ||
-        user.school.toLowerCase().includes(this.searchText.toLowerCase()) ||
-        user.profession.toLowerCase().includes(this.searchText.toLowerCase());
+        cert.name.toLowerCase().includes(this.searchText.toLowerCase()) ||
+        cert.school.toLowerCase().includes(this.searchText.toLowerCase()) ||
+        cert.profession.toLowerCase().includes(this.searchText.toLowerCase());
 
-      const matchesClass = !this.selectedClass || user.class === this.selectedClass;
+      const matchesClass = !this.selectedClass || cert.class === this.selectedClass;
 
       return matchesSearch && matchesClass;
     });
   }
 }
 
-export default UserList;
+export default CertificateVerification;

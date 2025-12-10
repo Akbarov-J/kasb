@@ -54,6 +54,18 @@ export const routes: Routes = [
         loadChildren: () => import('./features/cabinet/profile/pages/profile.routes'),
       },
       {
+        path: 'user-list',
+        loadComponent: () => import('./features/cabinet/user-list/user-list'),
+      },
+      {
+        path: 'survey-results',
+        loadComponent: () => import('./features/cabinet/surveys/pages/surveys/surveys'),
+      },
+      {
+        path: 'certificate-verification',
+        loadComponent: () => import('./features/cabinet/certificate-verification/certificate-verification'),
+      },
+      {
         path: 'course-list',
         loadComponent: () => import('./features/cabinet/courses/pages/course-list/course-list'),
       },
