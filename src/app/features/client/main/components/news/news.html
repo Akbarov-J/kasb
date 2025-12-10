@@ -1,0 +1,50 @@
+<div class="max-w-[1440px] w-full mx-auto py-32 px-10 flex items-center justify-between gap-[72px]">
+  <div class="max-w-[440px] w-full flex flex-col items-start gap-10">
+    <div class="flex flex-col items-start gap-1">
+      <p class="text-[#0A0A0A] text-[48px] font-medium leading-14">Yangiliklar</p>
+      <p class="max-w-[400px] text-[#525252] text-[20px] leading-7">
+        Kasb-hunar yo'nalishi dunyosidan so'nggi yangiliklar va foydali materiallar
+      </p>
+    </div>
+    <!-- <button class="py-3 px-6 bg-[#2B7FE6] rounded-xl">
+      <p class="text-white text-lg font-medium leading-6">Barchasini ko‘rish</p>
+    </button> -->
+  </div>
+  <div>
+    <div class="max-w-[804px] flex gap-10">
+      <p-carousel
+        [value]="[1, 2, 3, 4, 5]"
+        [numVisible]="2"
+        [numScroll]="1"
+        [circular]="true"
+        autoplayInterval="30000"
+        contentClass="max-w-[848px] w-full flex gap-10"
+      >
+        <ng-template let-product #item>
+          <div class="max-w-[360px] flex flex-col gap-5">
+            <div class="max-w-[404px] h-full rounded-2xl overflow-hidden">
+              <img src="./assets/imgs/news-1.jpg" alt="" />
+            </div>
+            <div class="flex flex-col gap-6">
+              <div class="flex flex-col gap-2">
+                <p class="text-[#0A0A0A] text-[24px] font-medium leading-8">
+                  IT sohasida o'quvchilar uchun yangi amaliy mashg'ulotlar boshlandi
+                </p>
+                <p class="text-[#525252] text-lg leading-6 line-clamp-2">
+                  O'quvchilar uchun dasturlash, dizayn va sun'iy intellekt bo'yicha bepul kurslar
+                  ishga tushdi. Hoziroq ro'yxatdan o'ting!
+                </p>
+              </div>
+              <button
+                class="w-full flex justify-center items-center gap-2 py-2 bg-white border border-[#DDDDDD] rounded-xl"
+              >
+                <p class="text-[#0A0A0A] font-medium leading-6">Batafsil</p>
+                <span class="pi pi-arrow-right text-[#525252]" style="font-size: 0.7rem"></span>
+              </button>
+            </div>
+          </div>
+        </ng-template>
+      </p-carousel>
+    </div>
+  </div>
+</div>

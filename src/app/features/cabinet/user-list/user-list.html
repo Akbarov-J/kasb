@@ -1,0 +1,57 @@
+<div class="w-full flex justify-between">
+  <input type="text" name="" id="" />
+  <p-select></p-select>
+</div>
+
+<div class="card">
+  <p-table
+    [value]="users"
+    [paginator]="true"
+    [rows]="5"
+    [rowsPerPageOptions]="[5, 10, 20]"
+    styleClass="custom-table"
+    [tableStyle]="{ 'min-width': '60rem' }"
+  >
+    <ng-template pTemplate="header">
+      <tr>
+        <th style="width: 25%">O‘quvchi</th>
+        <th style="width: 10%">Sinf</th>
+        <th style="width: 15%">Maktab</th>
+        <th style="width: 20%">Tanlagan kasbi</th>
+        <th style="width: 15%">So‘rovnoma</th>
+        <th style="width: 15%">Javob berish</th>
+      </tr>
+    </ng-template>
+
+    <ng-template pTemplate="body" let-user>
+      <tr>
+        <td>
+          <div class="student-profile">
+            <img
+              *ngIf="user.image; else defaultIcon"
+              [src]="user.image"
+              [alt]="user.name"
+              class="avatar-img"
+            />
+            <ng-template #defaultIcon>
+              <i class="pi pi-user avatar-icon"></i>
+            </ng-template>
+            <span class="student-name">{{ user.name }}</span>
+          </div>
+        </td>
+        <td>{{ user.class }}</td>
+        <td>{{ user.school }}</td>
+        <td>{{ user.profession }}</td>
+        <td>
+          <a href="#" class="action-link">
+            <i class="pi pi-eye"></i>
+            <span>Ko‘rish</span>
+          </a>
+        </td>
+        <td>
+          <button class="btn-write">Yozish</button>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>

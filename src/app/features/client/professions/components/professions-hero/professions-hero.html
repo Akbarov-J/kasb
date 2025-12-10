@@ -1,0 +1,94 @@
+<div class="flex flex-col items-center gap-10 bg-[#4593FFCC] py-20 pb-10 px-10">
+  <div class="max-w-[1440px] w-full mx-auto flex items-center flex-col gap-10 px-10">
+    <div class="flex flex-col items-center gap-2">
+      <p class="max-w-[1000px] text-white text-[72px] font-medium leading-20 text-center">
+        Kasblar
+      </p>
+      <p class="max-w-[720px] text-white text-[24px] leading-8 text-center">
+        O'zingizga mos kelajak kasbini toping va o'rganishni boshlang
+      </p>
+    </div>
+    <div class="w-full mx-auto bg-white rounded-2xl py-10">
+      <div class="flex flex-col mx-auto items-center justify-center gap-10">
+        <div class="w-full max-w-2xl">
+          <div class="flex items-center rounded-xl border border-gray-200 overflow-hidden">
+            <div class="flex items-center bg-white border-r border-gray-200">
+              <p-select
+                [options]="cities"
+                [(ngModel)]="selectedCity"
+                optionLabel="name"
+                placeholder="Fanlar"
+                class="w-full h-full"
+                appendTo="body"
+              />
+            </div>
+
+            <div class="relative flex-grow">
+              <input
+                type="text"
+                placeholder="Qiziqqan kasbingizni kiriting"
+                class="w-full p-3 pl-10 text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-150"
+                aria-label="Kasb qidirish maydoni"
+              />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5 text-gray-400 absolute left-3 top-1/2 transform -translate-y-1/2"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                />
+              </svg>
+            </div>
+
+            <button
+              class="px-8 py-3 bg-blue-500 text-white font-medium hover:bg-blue-600 transition duration-150 flex items-center"
+              aria-label="Qidirish tugmasi"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5 mr-2"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                />
+              </svg>
+              Qidirish
+            </button>
+          </div>
+        </div>
+        <div class="flex items-center gap-5">
+          <p class="text-[#0A0A0A] font-medium leading-6">Ommabop:</p>
+          <div class="flex items-center gap-2">
+            <p
+              class="py-2 px-4 rounded-full bg-[#E5F0FF] border border-[#D9E9FF] font-medium text-[#4593FF]"
+            >
+              Dasturchi
+            </p>
+            <p
+              class="py-2 px-4 rounded-full bg-[#FFEDD4] border border-[#FED7AA] font-medium text-[#EA580C]"
+            >
+              Dizayner
+            </p>
+            <p
+              class="py-2 px-4 rounded-full bg-[#EDE9FE] border border-[#DDD6FE] font-medium text-[#7C3AED]"
+            >
+              Loyiha menejeri
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

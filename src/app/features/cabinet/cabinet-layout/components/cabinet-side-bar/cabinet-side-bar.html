@@ -1,0 +1,16 @@
+<div class="p-6 flex flex-col gap-2">
+  <ul class="flex flex-col gap-2">
+    @for(item of menu; track $index){ @if(item.permissions.includes(roleId())){
+    <li>
+      <a
+        [routerLink]="item.url"
+        routerLinkActive="!text-[#4593FF] border-[#D9E9FF] bg-[#E5F0FF]"
+        class="flex items-center gap-2 bg-[#0A0A0A05] p-3 rounded-xl border border-[#0A0A0A05] text-[#737373]"
+      >
+        <span class="pi" [class]="item.icon"></span>
+        <p class="text-[#0A0A0A] font-medium leading-6">{{ item.title }}</p>
+      </a>
+    </li>
+    } }
+  </ul>
+</div>

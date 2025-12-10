@@ -1,0 +1,42 @@
+<div class="w-full h-screen grid grid-cols-2 justify-center items-center bg-[#F8F8F8]">
+  <div class="w-full h-full flex relative flex-col gap-5 items-center justify-center">
+    <div class="absolute top-5 left-5 flex items-center gap-2">
+      <a href="" class="flex items-center gap-3">
+        <img src="./assets/svg/logo.svg" alt="" />
+        <p class="text-[#2B7FE6] text-sm font-medium leading-5">
+          KASBIY MUVAFFAQIYATGA<br />
+          YO‘NALTIRISH PLATFORMASI
+        </p>
+      </a>
+    </div>
+    @if(!selectedRole()){
+    <div class="max-w-[440px] w-full">
+      <app-choose-role (selectRole)="selectRole($event)"></app-choose-role>
+    </div>
+    } @if(selectedRole()){
+    <p-selectbutton
+      [options]="stateOptions()"
+      [(ngModel)]="selectedRole"
+      optionLabel="label"
+      optionValue="value"
+      [allowEmpty]="false"
+      aria-labelledby="basic"
+    />
+
+    @if(selectedRole()==1){
+    <app-user-role (signIn)="goToAdmin()"></app-user-role>
+    }@else {
+
+    <app-one-id (signIn)="goToAdmin()"></app-one-id>
+    } }
+
+    <div class="absolute bottom-4 left-0 right-0 flex items-center justify-center gap-3">
+      <img src="./assets/svg/uzinfocom.svg" alt="" class="h-8 grayscale" />
+    </div>
+  </div>
+  <div class="w-full h-full flex items-center justify-center bg-[#E5F0FF]">
+    <div class="flex flex-col items-center justify-center">
+      <img src="./assets/imgs/sign-in-img.png" alt="" class="w-[640px] h-[640px]" />
+    </div>
+  </div>
+</div>

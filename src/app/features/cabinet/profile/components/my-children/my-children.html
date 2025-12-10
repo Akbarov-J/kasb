@@ -1,0 +1,82 @@
+<div class="flex flex-col gap-5">
+  <div class="w-full flex justify-between items-center">
+    <p class="text-[#0A0A0A] text-[24px] font-medium leading-8">Mening farzandlarim</p>
+    <button pButton class="flex items-center" (click)="showDialog()">
+      <span class="pi pi-plus"></span>
+      <p>Farzand qo‘shish</p>
+    </button>
+  </div>
+
+  <div class="grid grid-cols-2 gap-4">
+    <!-- @for(info of informations(); track $index){ -->
+    <div class="flex flex-col gap-4 p-4 bg-[#0A0A0A0A] rounded-xl">
+      <p class="text-[#0A0A0A] text-[20px] font-medium leading-6">Ishanxanov Ayyubxon</p>
+
+      <div class="grid grid-cols-2">
+        <div class="flex flex-col gap-1">
+          <p class="text-[#525252] text-xs leading-4">Maktab:</p>
+          <p class="text-[#0A0A0A] leading-6">11-maktab</p>
+        </div>
+        <div class="flex flex-col gap-1">
+          <p class="text-[#525252] text-xs leading-4">Sinf:</p>
+          <p class="text-[#0A0A0A] leading-6">9A-sinf</p>
+        </div>
+      </div>
+    </div>
+    <!-- } -->
+  </div>
+</div>
+
+<p-dialog
+  header="Farzand qo‘shish"
+  [modal]="true"
+  [(visible)]="visible"
+  [style]="{ width: '25rem' }"
+>
+  <span class="p-text-secondary block mb-8">Farzand qo‘shish uchun ma’lumotlarni kiriting</span>
+  <div class="flex flex-col gap-4 mb-6">
+    <div class="">
+      <label for="hujjat-turi" class="block text-sm font-medium text-gray-700 mb-1"
+        >Hujjat turi</label
+      >
+      <p-select
+        id="hujjat-turi"
+        [options]="documentTypes"
+        optionLabel="name"
+        placeholder="Passport"
+        class="w-full"
+        styleClass="w-full"
+      ></p-select>
+    </div>
+    <div class="">
+      <label for="passport-raqami" class="block text-sm font-medium text-gray-700 mb-1"
+        >Passport raqami</label
+      >
+      <input
+        id="passport-raqami"
+        placeholder="1234567"
+        pInputText
+        class="w-full"
+        styleClass="w-full p-3 rounded-lg bg-gray-100 border-none focus:ring-blue-500"
+      />
+    </div>
+    <div>
+      <label for="tugilgan-sana" class="block text-sm font-medium text-gray-700 mb-1"
+        >Tug'ilgan sana</label
+      >
+      <p-datepicker
+        id="tugilgan-sana"
+        dateFormat="dd/mm/yy"
+        placeholder="01 / 01 / 2020"
+        [showIcon]="true"
+        icon="pi pi-calendar"
+        class="w-full"
+        inputStyleClass="w-full"
+        styleClass="w-full! rounded-lg bg-gray-100 border-none focus:ring-blue-500"
+      ></p-datepicker>
+    </div>
+  </div>
+  <div class="w-full gap-2">
+    <button pButton (click)="visible = false" class="w-full">Farzand qo‘shish</button>
+  </div>
+</p-dialog>

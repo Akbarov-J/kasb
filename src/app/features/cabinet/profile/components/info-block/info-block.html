@@ -1,0 +1,12 @@
+<div class="flex flex-col gap-5">
+  <p class="text-[#0A0A0A] text-[24px] font-medium leading-8">{{ title() }}</p>
+
+  <div class="grid grid-cols-2 gap-4">
+    @for(info of informations(); track $index){
+    <div class="flex flex-col gap-0.5">
+      <p class="text-xs text-[#525252] font-medium leading-4">{{ info.title }}</p>
+      <p class="text-[#0A0A0A] leading-6">{{ info.value }}</p>
+    </div>
+    }
+  </div>
+</div>

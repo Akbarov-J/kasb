@@ -1,0 +1,22 @@
+<div class="flex flex-col items-center gap-10 bg-[#4593FFCC] py-20 pb-10 px-10">
+  <div class="max-w-[1440px] w-full mx-auto flex items-center flex-col gap-10">
+    <div class="flex flex-col items-center gap-2">
+      <p class="max-w-[1000px] text-white text-[72px] font-medium leading-20 text-center">
+        {{ title() }}
+      </p>
+      <p class="max-w-[720px] text-white text-[24px] leading-8 text-center">
+        {{ subTitle() }}
+      </p>
+    </div>
+    <a
+      routerLink="/sign-in"
+      class="flex items-center gap-2 bg-white py-3 px-6 rounded-2xl cursor-pointer"
+    >
+      <p class="text-[18px] font-medium leading-6">Hoziroq boshlash</p>
+      <span class="pi pi-arrow-right text-[#525252]"></span>
+    </a>
+  </div>
+  <div class="max-w-[1440px] w-full mx-auto h-[400px] rounded-t-full overflow-hidden">
+    <img [src]="imgLink()" alt="" class="w-full h-full object-cover" />
+  </div>
+</div>

@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+@import "primeicons/primeicons.css";
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+  
+
+
+:root {
+  --primary-color: #ff0000 !important;
+  --surface-0: #f0f0f0 !important;
+}
+
+
+:host ::ng-deep .p-button{
+    background: #000;
+    border-radius: 12px !important;
+}

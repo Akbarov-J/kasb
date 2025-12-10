@@ -1,0 +1,79 @@
+<div class="max-w-[1440px] w-full mx-auto py-6 px-10 flex items-center justify-between">
+  <a href="" class="flex items-center gap-3">
+    <img src="./assets/svg/logo.svg" alt="" />
+    <p class="text-[#4593FF] text-sm font-medium leading-5">
+      KASBIY MUVAFFAQIYATGA<br />
+      YO‘NALTIRISH PLATFORMASI
+    </p>
+  </a>
+
+  <div class="">
+    <ul class="flex items-center gap-2">
+      <li class="">
+        <a
+          routerLink="/students"
+          routerLinkActive="active"
+          class="text-[#0A0A0A] font-medium leading-6 px-4 py-2"
+          >O‘quvchilar</a
+        >
+      </li>
+      <li class="">
+        <a
+          routerLink="psychologist"
+          routerLinkActive="active"
+          class="text-[#0A0A0A] font-medium leading-6 px-4 py-2"
+          >Pedagoglar</a
+        >
+      </li>
+      <li class="">
+        <a
+          routerLink="users"
+          routerLinkActive="active"
+          class="text-[#0A0A0A] font-medium leading-6 px-4 py-2"
+          >Foydalanuvchilar</a
+        >
+      </li>
+      <li class="">
+        <a
+          routerLink="professions"
+          routerLinkActive="active"
+          class="text-[#0A0A0A] font-medium leading-6 px-4 py-2"
+          >Kasblar</a
+        >
+      </li>
+      <li class="">
+        <a
+          routerLink="certificate"
+          routerLinkActive="active"
+          class="text-[#0A0A0A] font-medium leading-6 px-4 py-2"
+          >Sertifikat</a
+        >
+      </li>
+    </ul>
+  </div>
+  <div class="flex items-center gap-2">
+    <div
+      class="flex items-center gap-2 py-2 px-3 rounded-xl bg-[#0A0A0A0A] border border-[#DDDDDD]"
+    >
+      <span class="pi pi-search text-[#A3A3A3]"></span>
+      <input
+        type="text"
+        placeholder="Qidirish"
+        class="placeholder:font-semibold placeholder:leading-6 border-none outline-none"
+      />
+    </div>
+    <div>
+      <p-select
+        [options]="languages"
+        [(ngModel)]="selectedLang"
+        optionLabel="name"
+        optionValue="id"
+        placeholder="Uz"
+      />
+    </div>
+    <a routerLink="sign-in" class="flex items-center gap-2 py-2 px-4 bg-[#4593FF] rounded-xl">
+      <p class="text-white font-medium">Kirish</p>
+      <span class="pi pi-arrow-right text-white" style="font-size: 0.8rem"></span>
+    </a>
+  </div>
+</div>

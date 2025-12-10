@@ -1,0 +1,85 @@
+<div
+  class="max-w-[1440px] w-full mx-auto py-32 px-10 flex flex-col items-center justify-between gap-[72px]"
+>
+  <div class="flex flex-col items-center gap-6">
+    <h2 class="text-[#0A0A0A] text-[48px] font-medium leading-14">Bizning maqsadlarimiz</h2>
+
+    <p-selectbutton
+      [options]="paymentOptions"
+      [(ngModel)]="value"
+      optionLabel="name"
+      optionValue="value"
+      [allowEmpty]="false"
+    />
+  </div>
+
+  <div class="w-full flex flex-col lg:flex-row justify-between items-start lg:items-center">
+    <div class="flex flex-col items-start gap-10">
+      <div class="flex flex-col items-start gap-1">
+        <h3 class="text-[#0A0A0A] text-[30px] font-medium leading-9">O'z kasbingizni tanlang</h3>
+        <p class="text-[#525252] text-[20px] leading-7">Bepul diagnostika va xizmatlar yordamida</p>
+      </div>
+      <a
+        routerLink="/sign-in"
+        class="px-6 py-3 bg-[#4593FF] text-lg text-white font-medium leading-6 rounded-xl cursor-pointer"
+      >
+        Hozir boshlang
+      </a>
+    </div>
+
+    <div class="flex flex-col items-end gap-6">
+      <div class="flex gap-4">
+        <div
+          class="cursor-pointer px-5 py-3 flex items-center gap-2 text-lg font-medium leading-6 text-[#EA580C] bg-orange-100 rounded-full border text-center"
+        >
+          <span class="pi pi-briefcase"></span>Muhandis-konstruktor
+        </div>
+        <div
+          class="cursor-pointer px-5 py-3 flex items-center gap-2 text-lg font-medium leading-6 text-[#16A34A] bg-green-100 rounded-full border text-center"
+        >
+          <span class="pi pi-map-marker"></span>Turizm bo'yicha menejer
+        </div>
+        <div
+          class="cursor-pointer px-5 py-3 flex items-center gap-2 text-lg font-medium leading-6 text-[#7C3AED] bg-purple-100 rounded-full border text-center"
+        >
+          <span class="pi pi-images"></span>Ijodiy prodyuser
+        </div>
+      </div>
+      <div class="flex gap-4">
+        <div
+          class="cursor-pointer px-5 py-3 flex items-center gap-2 text-lg font-medium leading-6 text-[#7C3AED] bg-purple-100 rounded-full border text-center"
+        >
+          <span class="pi pi-hammer"></span>Metallurg
+        </div>
+        <div
+          class="cursor-pointer px-5 py-3 flex items-center gap-2 text-lg font-medium leading-6 text-[#4593FF] bg-blue-100 rounded-full border text-center"
+        >
+          <span class="pi pi-book"></span>O'qituvchi
+        </div>
+        <div
+          class="cursor-pointer px-5 py-3 flex items-center gap-2 text-lg font-medium leading-6 text-[#E11D48] bg-red-100 rounded-full border text-center"
+        >
+          <span class="pi"> </span>Advokat
+        </div>
+      </div>
+      <div class="flex gap-4">
+        <a
+          routerLink="/professions-details"
+          class="cursor-pointer px-5 py-3 flex items-center gap-2 text-lg font-medium leading-6 text-[#16A34A] bg-[#DCFCE7] rounded-full border text-center"
+        >
+          <span class="pi pi-code"></span>Dasturchi
+        </a>
+        <div
+          class="cursor-pointer px-5 py-3 text-lg font-medium leading-6 text-[#16A34A] bg-green-100 rounded-full border text-center"
+        >
+          <span class="pi"> </span>AI bo'yicha mutaxassis
+        </div>
+        <div
+          class="cursor-pointer px-5 py-3 text-lg font-medium leading-6 text-[#7C3AED] bg-purple-100 rounded-full border text-center"
+        >
+          <span class="pi"> </span>Agronom
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

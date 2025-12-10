@@ -1,0 +1,69 @@
+<div class="flex flex-col items-center gap-[72px] bg-[#4593FFCC] py-20 px-10">
+  <div class="max-w-[1440px] w-full mx-auto flex items-center flex-col gap-10">
+    <div class="flex flex-col items-center gap-2">
+      <p class="max-w-[1000px] text-white text-[72px] font-medium leading-20 text-center">
+        Kelajakdagi kasbingizni hoziroq biz bilan toping!
+      </p>
+      <p class="max-w-[720px] text-white text-[24px] leading-8 text-center">
+        Platformamiz qiziqishlaringizga mos kasbni topishga yordam beradi va tanlagan yo'nalingizda
+        mahoratingizni oshirish uchun onlayn kurslar taklif etadi.
+      </p>
+    </div>
+    <a
+      routerLink="/sign-in"
+      class="flex items-center gap-2 bg-white py-3 px-6 rounded-2xl cursor-pointer"
+    >
+      <p class="text-[18px] font-medium leading-6">Hoziroq boshlash</p>
+      <span class="pi pi-arrow-right text-[#525252]"></span>
+    </a>
+  </div>
+  <div class="max-w-[1440px] mx-auto flex items-center gap-4 bg-[#0A0A0A14] p-4 rounded-3xl">
+    <div class="bg-white w-12 h-12 rounded-xl flex items-center justify-center">
+      <span class="pi pi-list-check" style="font-size: 1.3rem"></span>
+    </div>
+    <p class="max-w-[480px] text-white font-medium leading-6">
+      Maktabgacha va maktab ta’limi vazirligi tizimidagi umumta’lim maktablarining 9–11-sinf
+      o‘quvchilari uchun so‘rovnoma
+    </p>
+    <div class="flex items-center gap-2">
+      <a
+        routerLink="/sign-in"
+        class="flex items-center gap-2 bg-white py-3 px-6 rounded-2xl cursor-pointer"
+      >
+        <p class="text-[18px] font-medium leading-6">9-sinf uchun</p>
+      </a>
+      <a
+        routerLink="/sign-in"
+        class="flex items-center gap-2 bg-white py-3 px-6 rounded-2xl cursor-pointer"
+      >
+        <p class="text-[18px] font-medium leading-6">11-sinf uchun</p>
+      </a>
+    </div>
+  </div>
+
+  <div class="max-w-[1440px] w-full mx-auto flex gap-10">
+    <p-carousel
+      [value]="[1, 2, 3, 4, 5]"
+      [numVisible]="5"
+      [numScroll]="1"
+      [circular]="true"
+      autoplayInterval="30000"
+    >
+      <ng-template let-product #item>
+        <div class="rounded">
+          <div class="">
+            <a
+              routerLink="/professions-details"
+              class="block mx-auto max-w-[272px] h-[272px] rounded-full overflow-hidden"
+            >
+              <img
+                [src]="'./assets/imgs/hero-' + product + '.png'"
+                class="w-full h-full rounded-border object-cover"
+              />
+            </a>
+          </div>
+        </div>
+      </ng-template>
+    </p-carousel>
+  </div>
+</div>

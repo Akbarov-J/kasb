@@ -1,0 +1,32 @@
+<div class="flex flex-col gap-6">
+  <div>
+    <app-info-block
+      [title]="'Shaxsiy ma’lumotlar'"
+      [informations]="personalInformations"
+    ></app-info-block>
+  </div>
+
+  <hr class="border-[#EFEFEF]" />
+
+  <div>
+    <app-info-block
+      [title]="'Ta’lim ma’lumotlari'"
+      [informations]="educationInformations"
+    ></app-info-block>
+  </div>
+
+  <hr class="border-[#EFEFEF]" />
+
+  <div>
+    <app-info-block
+      [title]="'So‘rovnoma natijalari'"
+      [informations]="questionnaireInformations"
+    ></app-info-block>
+  </div>
+
+  <hr class="border-[#EFEFEF]" />
+
+  <div>
+    <app-psychologist-advice></app-psychologist-advice>
+  </div>
+</div>

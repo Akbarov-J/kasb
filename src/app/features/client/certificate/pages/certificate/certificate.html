@@ -1,0 +1,37 @@
+<div class="max-w-[1440px] mx-auto py-32 px-10 flex flex-col items-center justify-between gap-10">
+  <div class="w-full flex justify-center">
+    <h3 class="text-[#0A0A0A] text-[48px] font-medium leading-14">
+      Sertifikatni olish va tekshirish
+    </h3>
+  </div>
+  <div>
+    <p-selectbutton
+      [options]="stateOptions()"
+      [(ngModel)]="selectedRole"
+      optionLabel="label"
+      optionValue="value"
+      [allowEmpty]="false"
+      aria-labelledby="basic"
+    />
+  </div>
+  <div class="max-w-[400px] w-full">
+    @if(selectedRole()){
+    <div class="max-w-[400px] w-full flex flex-col gap-3">
+      <div class="max-w-[400px] w-full">
+        <label for="hujjat-turi" class="text-sm font-medium text-gray-700 mb-1"
+          >JSHSHIR kiriting</label
+        >
+        <input
+          id="hujjat-turi"
+          pInputText
+          optionLabel="name"
+          placeholder="12345678901234"
+          class="w-full"
+          styleClass="w-full"
+        />
+      </div>
+      <button pButton class="">Tekshirish</button>
+    </div>
+    }
+  </div>
+</div>

@@ -7,8 +7,12 @@
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "style": "scss"
-        }
+          "style": "scss",
+          "skipTests": true
+        },
+      "@schematics/angular:service": {
+        "skipTests": true
+      }
       },
       "root": "",
       "sourceRoot": "src",
@@ -30,7 +34,7 @@
               }
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.css"
             ]
           },
           "configurations": {

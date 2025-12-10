@@ -1,0 +1,55 @@
+<div class="w-full flex flex-col gap-6 rounded-2xl p-6 shadow bg-white">
+  <div class="">
+    <p class="text-[#0A0A0A] text-[20px] font-medium leading-7 mb-0.5">Ro‘yxatdan o‘tish</p>
+    <p class="text-[#525252] leading-6">Platformadagi rolingizni tanlang</p>
+  </div>
+  <div class="w-full flex flex-col gap-2 items-center">
+    <label
+      for="1"
+      class="w-full flex justify-between px-4 py-3 rounded-xl border border-[#EFEFEF] cursor-pointer"
+    >
+      <div class="flex items-center gap-2">
+        <img src="./assets/svg/education.svg" alt="" />
+        <p class="text-[#525252] font-medium leading-6">O‘quvchi</p>
+      </div>
+      <p-radiobutton [inputId]="'1'" name="category" [value]="1" [(ngModel)]="selectedRole" />
+    </label>
+    <label
+      for="2"
+      class="w-full flex justify-between px-4 py-3 rounded-xl border border-[#EFEFEF] cursor-pointer"
+    >
+      <div class="flex items-center gap-2">
+        <span class="pi pi-user"></span>
+        <p class="text-[#525252] font-medium leading-6">Foydalanuvchi</p>
+      </div>
+      <p-radiobutton [inputId]="'2'" name="category" [value]="2" [(ngModel)]="selectedRole" />
+    </label>
+    <label
+      for="3"
+      class="w-full flex justify-between px-4 py-3 rounded-xl border border-[#EFEFEF] cursor-pointer"
+    >
+      <div class="flex items-center gap-2">
+        <span class="pi pi-book"></span>
+        <p class="text-[#525252] font-medium leading-6">Psixolog</p>
+      </div>
+      <p-radiobutton [inputId]="'3'" name="category" [value]="3" [(ngModel)]="selectedRole" />
+    </label>
+    <label
+      for="4"
+      class="w-full flex justify-between px-4 py-3 rounded-xl border border-[#EFEFEF] cursor-pointer"
+    >
+      <div class="flex items-center gap-2">
+        <img src="./assets/svg/education.svg" alt="" />
+        <p class="text-[#525252] font-medium leading-6">Direktor</p>
+      </div>
+      <p-radiobutton [inputId]="'4'" name="category" [value]="4" [(ngModel)]="selectedRole" />
+    </label>
+  </div>
+  <button
+    class="py-2 bg-[#4593FF] rounded-xl text-white font-medium leading-6"
+    [disabled]="!selectedRole()"
+    (click)="submit()"
+  >
+    Davom etish
+  </button>
+</div>
