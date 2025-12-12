@@ -4,7 +4,7 @@ import { ChooseRole } from '../../components/choose-role/choose-role';
 import { SelectButton } from 'primeng/selectbutton';
 import { UserRole } from '../../components/user-role/user-role';
 import { OneId } from '../../components/one-id/one-id';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-sign-in',
@@ -16,6 +16,7 @@ export default class SignIn {
   isChooseRole = signal<number | null>(null);
 
   selectedRole = signal<number | null>(null);
+  preselected = signal<boolean>(false);
 
   stateOptions = signal<any>([
     { label: "O'quvchi", value: 1 },
@@ -25,6 +26,16 @@ export default class SignIn {
   ]);
 
   router = inject(Router);
+  route = inject(ActivatedRoute);
+
+  ngOnInit() {
+    const roleParam = this.route.snapshot.queryParamMap.get('role');
+    const role = roleParam ? +roleParam : null;
+    if (role) {
+      this.selectedRole.set(role);
+      this.preselected.set(true);
+    }
+  }
 
   gotoOneId() {}
 

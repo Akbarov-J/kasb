@@ -14,14 +14,16 @@
       <app-choose-role (selectRole)="selectRole($event)"></app-choose-role>
     </div>
     } @if(selectedRole()){
-    <p-selectbutton
-      [options]="stateOptions()"
-      [(ngModel)]="selectedRole"
-      optionLabel="label"
-      optionValue="value"
-      [allowEmpty]="false"
-      aria-labelledby="basic"
-    />
+    @if(!preselected()){
+      <p-selectbutton
+        [options]="stateOptions()"
+        [(ngModel)]="selectedRole"
+        optionLabel="label"
+        optionValue="value"
+        [allowEmpty]="false"
+        aria-labelledby="basic"
+      />
+    }
 
     @if(selectedRole()==1){
     <app-user-role (signIn)="goToAdmin()"></app-user-role>

@@ -8,6 +8,15 @@
         {{ subTitle() }}
       </p>
     </div>
+    @if(buttonRoute()) {
+    <div
+      (click)="handleButtonClick()"
+      class="flex items-center gap-2 bg-white py-3 px-6 rounded-2xl cursor-pointer"
+    >
+      <p class="text-[18px] font-medium leading-6">Hoziroq boshlash</p>
+      <span class="pi pi-arrow-right text-[#525252]"></span>
+    </div>
+    } @else {
     <a
       routerLink="/sign-in"
       class="flex items-center gap-2 bg-white py-3 px-6 rounded-2xl cursor-pointer"
@@ -15,6 +24,7 @@
       <p class="text-[18px] font-medium leading-6">Hoziroq boshlash</p>
       <span class="pi pi-arrow-right text-[#525252]"></span>
     </a>
+    }
   </div>
   <div class="max-w-[1440px] w-full mx-auto h-[400px] rounded-t-full overflow-hidden">
     <img [src]="imgLink()" alt="" class="w-full h-full object-cover" />
