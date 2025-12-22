@@ -6,6 +6,17 @@
     </p>
   </div>
 
+  <div class="w-full flex justify-center">
+    <p-selectbutton
+      [options]="typeOptions()"
+      [(ngModel)]="selectedType"
+      optionLabel="label"
+      optionValue="value"
+      [allowEmpty]="false"
+      aria-labelledby="basic"
+    />
+  </div>
+
   <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
     <div class="bg-[#0A0A0A0A] p-6 rounded-xl overflow-hidden flex flex-col">
       <div class="mb-6">
@@ -20,8 +31,8 @@
         <button
           class="w-full py-2 flex items-center justify-center gap-2 bg-white rounded-xl border border-[#DDDDDD] cursor-pointer"
         >
-          <span class="pi pi-eye text-[#525252]"></span>
-          <p class="font-medium leading-6">Ko'rish</p>
+          <span class="pi pi-download text-[#525252]"></span>
+          <p class="font-medium leading-6">Yuklab olish</p>
         </button>
       </div>
     </div>
@@ -38,8 +49,8 @@
         <button
           class="w-full py-2 flex items-center justify-center gap-2 bg-white rounded-xl border border-[#DDDDDD] cursor-pointer"
         >
-          <span class="pi pi-eye text-[#525252]"></span>
-          <p class="font-medium leading-6">Ko'rish</p>
+          <span class="pi pi-download text-[#525252]"></span>
+          <p class="font-medium leading-6">Yuklab olish</p>
         </button>
       </div>
     </div>
@@ -56,8 +67,8 @@
         <button
           class="w-full py-2 flex items-center justify-center gap-2 bg-white rounded-xl border border-[#DDDDDD] cursor-pointer"
         >
-          <span class="pi pi-eye text-[#525252]"></span>
-          <p class="font-medium leading-6">Ko'rish</p>
+          <span class="pi pi-download text-[#525252]"></span>
+          <p class="font-medium leading-6">Yuklab olish</p>
         </button>
       </div>
     </div>
